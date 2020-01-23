@@ -92,16 +92,25 @@ Pytorch 0.4.1
 
 ## Steps
 
-1. Download the `miniImageNet` datasets by the following steps (this will download the orginal ImageNet dataset). If you already downloaded ImageNet dataset, please comment line 5 and line 6 in `./filelists/miniImagenet/download_miniImagenet.sh`
+1. Download the datasets for evaluation (EuroSAT, ISIC2018, Plant Disease, ChestX-Ray8) using the above links.
+
+2. Download miniImageNet. 
 
 ```bash
     Change directory to ./filelists/miniImagenet
     run source ./download_miniImagenet.sh
 ```
 
-2. Download the datasets for evaluation (EuroSAT, ISIC2018, Plant Disease, ChestX-Ray8) using the above links.
+3. Change configuration file `./configs.py` to reflect the correct paths to each dataset. Can skip the first two steps if these datasets are already downloaded.
 
-3. Train base models on miniImageNet
+4. Run miniImageNet training configuration. 
+
+```bash
+    Change directory to ./filelists/miniImagenet
+    run source ./configure_miniImagenet.sh
+```
+
+5. Train base models on miniImageNet
 
     • *Standard supervised learning on miniImageNet*
 
@@ -115,7 +124,7 @@ Pytorch 0.4.1
         python ./train.py --dataset miniImageNet --model ResNet10  --method protonet --n_shot 5 --train_aug
     ```
 
-4. Save features for evaluation (optional, if there is no need to adapt the features during testing) 
+6. Save features for evaluation (optional, if there is no need to adapt the features during testing) 
 
     • *Save features for testing*
 
@@ -123,15 +132,15 @@ Pytorch 0.4.1
         python save_features.py --model ResNet10 --method baseline --dataset CropDisease --n_shot 5
     ```
 
-5. Test with saved features (optional, if there is no need to adapt the features during testing) 
+7. Test with saved features (optional, if there is no need to adapt the features during testing) 
 
     ```bash
         python test_with_saved_features.py --model ResNet10 --method baseline --dataset CropDisease --n_shot 5
     ```
 
-6. Test
+8. Test
 
-    • *Finetune with frozen backbone*: 
+    • *Finetune with frozen model backbone*: 
  
     ```bash
         python finetune.py --model ResNet10 --method baseline  --train_aug --n_shot 5 --freeze_backbone
@@ -145,7 +154,7 @@ Pytorch 0.4.1
     
     Output: 600 Test Acc = 49.91% +- 0.44%
 
-7. For testing your own methods, simply replace the function **finetune()** in `finetune.py` with your own method. Your method should at least have the following arguments,
+9. For testing your own methods, simply replace the function **finetune()** in `finetune.py` with your own method. Your method should at least have the following arguments,
 
     • *novel_loader: data loader for the corresponding dataset (EuroSAT, ISIC2018, Plant Disease, ChestX-Ray8)*
 
