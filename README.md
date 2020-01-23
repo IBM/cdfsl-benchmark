@@ -5,7 +5,7 @@
 
 ### Paper
 
-Please cite the following paper in use of this evaluation framework, https://arxiv.org/pdf/1912.07200.pdf:
+Please cite the following paper in use of this evaluation framework: https://arxiv.org/pdf/1912.07200.pdf
 
 ```
 @article{guo2019new,
