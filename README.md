@@ -89,6 +89,7 @@ Python 3.5.5
 
 Pytorch 0.4.1
 
+h5py 2.9.0
 
 ## Steps
 
