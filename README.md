@@ -102,7 +102,7 @@ h5py 2.9.0
     run source ./download_miniImagenet.sh
 ```
 
-3. Change configuration file `./configs.py` to reflect the correct paths to each dataset. Can skip the first two steps if these datasets are already downloaded.
+3. Change configuration file `./configs.py` to reflect the correct paths to each dataset. Please see the existing example paths for information on which subfolders these paths should point to (i.e. the `imagenet_path` variable should point directly to the training partition in the `train` subfolder). You can skip the first two steps if these datasets are already downloaded.
 
 4. Run miniImageNet training configuration. 
 
