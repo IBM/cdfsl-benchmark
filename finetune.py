@@ -203,7 +203,7 @@ if __name__=='__main__':
     
     #########################################################################
     for idx, novel_loader in enumerate(novel_loaders):
-        print dataset_names[idx]
+        print (dataset_names[idx])
         start_epoch = params.start_epoch
         stop_epoch = params.stop_epoch
         print (freeze_backbone)

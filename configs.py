@@ -1,9 +1,9 @@
 save_dir                    = './logs'
 data_dir = {}
 data_dir['miniImagenet']    = './filelists/miniImagenet/' 
-imagenet_path                   = '/ssd/adv_train_imagenet/dataset/train'
+imagenet_path                   = '/mnt/data/ImageNet/train'
 
-ISIC_path = "/ssd/data/cross_domain_eval/ISIC"
-ChestX_path = "/ssd/data/cross_domain_eval/ChestX-ray14"
-CropDisease_path = "/ssd/data/cross_domain_eval/CropDisease"
-EuroSAT_path = "/ssd/data/cross_domain_eval/EuroSAT/2750"
+ISIC_path = "/mnt/data/few_shot/ISIC"
+ChestX_path = "/mnt/data/few_shot/ChestX-ray14"
+CropDisease_path = "/mnt/data/few_shot/CropDisease"
+EuroSAT_path = "/mnt/data/few_shot/EuroSAT/2750"
