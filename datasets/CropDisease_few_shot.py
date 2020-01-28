@@ -62,7 +62,7 @@ class SetDataset:
             self.sub_meta[label].append(data)
     
 
-        for key, item in self.sub_meta.iteritems():
+        for key, item in self.sub_meta.items():
             print (len(self.sub_meta[key]))
 
         self.sub_dataloader = [] 
