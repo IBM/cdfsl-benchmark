@@ -130,13 +130,13 @@ h5py 2.9.0
     • *Save features for testing*
 
     ```bash
-        python save_features.py --model ResNet10 --method baseline --dataset CropDisease --n_shot 5
+        python save_features.py --model ResNet10 --method baseline --dataset CropDisease --n_shot 5 --train_aug
     ```
 
 7. Test with saved features (optional, if there is no need to adapt the features during testing) 
 
     ```bash
-        python test_with_saved_features.py --model ResNet10 --method baseline --dataset CropDisease --n_shot 5
+        python test_with_saved_features.py --model ResNet10 --method baseline --dataset CropDisease --n_shot 5 --train_aug
     ```
 
 8. Test

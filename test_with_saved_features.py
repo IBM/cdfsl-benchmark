@@ -80,7 +80,7 @@ if __name__ == '__main__':
             model.load_state_dict(tmp['state'])
 
 
-    params.save_iter = 399
+    #params.save_iter = 399
     if params.save_iter != -1:
         novel_file = os.path.join( checkpoint_dir.replace("checkpoints","features"), params.dataset + "_" + str(params.save_iter)+".hdf5") #defaut split = novel, but you can also test base or val classes
     else:

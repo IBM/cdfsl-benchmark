@@ -16,7 +16,6 @@ from io_utils import model_dict, parse_args, get_resume_file, get_best_file, get
 
 from datasets import ISIC_few_shot, EuroSAT_few_shot, CropDisease_few_shot, Chest_few_shot
 
-
 def save_features(model, data_loader, outfile):
     f = h5py.File(outfile, 'w')
     max_count = len(data_loader)*data_loader.batch_size
@@ -53,8 +52,9 @@ if __name__ == '__main__':
     if not params.method in ['baseline'] :
         checkpoint_dir += '_%dway_%dshot' %( params.train_n_way, params.n_shot)
 
+    print('params.save_iter: ' + str(params.save_iter))
 
-    params.save_iter = 399
+    #params.save_iter = 399
     if params.save_iter != -1:
         modelfile   = get_assigned_file(checkpoint_dir, params.save_iter)
     elif params.method in ['baseline'] :
