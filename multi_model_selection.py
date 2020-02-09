@@ -156,7 +156,7 @@ def combine_model(model_embeddings, y_a_i, support_size, n_support, n_way, cross
     embeddings_idx_model = []
     embeddings_all = None
 
-    min_loss = 100.0 
+    min_loss = float("inf")
 
     for num in range(len(model_embeddings)):
         embedding_candidate = None
@@ -214,7 +214,7 @@ def train_selection(all_embeddings, y_a_i, support_size, n_support, n_way, with_
     for num in range(len(all_embeddings)):
         embedding_candidate = None
         idx_candidate = -1
-        min_loss = 100.0 
+        min_loss = float("inf")
         for idx, embedding in enumerate(all_embeddings[num]):
 
             if n_support == 50 or 20:
@@ -226,6 +226,7 @@ def train_selection(all_embeddings, y_a_i, support_size, n_support, n_way, with_
                 embedding_candidate = embedding
                 idx_candidate = idx
                 min_loss = running_loss
+                
         embeddings_idx_of_each.append(idx_candidate)
         embeddings_best_of_each.append(embedding_candidate)
 

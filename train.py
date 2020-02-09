@@ -15,7 +15,8 @@ from methods.baselinetrain import BaselineTrain
 from methods.protonet import ProtoNet
 
 from io_utils import model_dict, parse_args, get_resume_file  
-from datasets import miniImageNet_few_shot
+from datasets import miniImageNet_few_shot, DTD_few_shot
+
 
 def train(base_loader, model, optimization, start_epoch, stop_epoch, params):    
     if optimization == 'Adam':
@@ -49,6 +50,27 @@ if __name__=='__main__':
         
             datamgr = miniImageNet_few_shot.SimpleDataManager(image_size, batch_size = 16)
             base_loader = datamgr.get_data_loader(aug = params.train_aug )
+
+        elif params.dataset == "CUB":
+
+            base_file = configs.data_dir['CUB'] + 'base.json' 
+            base_datamgr    = SimpleDataManager(image_size, batch_size = 16)
+            base_loader     = base_datamgr.get_data_loader( base_file , aug = params.train_aug )
+       
+        elif params.dataset == "cifar100":
+            base_datamgr    = cifar_few_shot.SimpleDataManager("CIFAR100", image_size, batch_size = 16)
+            base_loader    = base_datamgr.get_data_loader( "base" , aug = True )
+                
+            params.num_classes = 100
+
+        elif params.dataset == 'caltech256':
+            base_datamgr  = caltech256_few_shot.SimpleDataManager(image_size, batch_size = 16)
+            base_loader = base_datamgr.get_data_loader(aug = False )
+            params.num_classes = 257
+
+        elif params.dataset == "DTD":
+            base_datamgr    = DTD_few_shot.SimpleDataManager(image_size, batch_size = 16)
+            base_loader     = base_datamgr.get_data_loader( aug = True )
 
         else:
            raise ValueError('Unknown dataset')
