@@ -28,7 +28,7 @@ class SimpleDataset:
         self.meta['image_names'] = []
         self.meta['image_labels'] = []
 
-        d = ImageFolder(EuroSAT_path)
+        d = ImageFolder(miniImageNet_path)
 
         for i, (data, label) in enumerate(d):
             self.meta['image_names'].append(data)
@@ -44,7 +44,6 @@ class SimpleDataset:
     def __len__(self):
         return len(self.meta['image_names'])
 
-
 class SetDataset:
     def __init__(self, batch_size, transform):
 
@@ -54,7 +53,7 @@ class SetDataset:
         for cl in self.cl_list:
             self.sub_meta[cl] = []
 
-        d = ImageFolder(EuroSAT_path)
+        d = ImageFolder(miniImageNet_path)
 
         for i, (data, label) in enumerate(d):
             self.sub_meta[label].append(data)

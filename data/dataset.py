@@ -11,11 +11,11 @@ class SimpleDataset:
     def __init__(self, data_file, transform, target_transform=identity):
         with open(data_file, 'r') as f:
             self.meta = json.load(f)
+
         self.transform = transform
         self.target_transform = target_transform
 
-
-    def __getitem__(self,i):
+    def __getitem__(self, i):
         image_path = os.path.join(self.meta['image_names'][i])
         img = Image.open(image_path).convert('RGB')
         img = self.transform(img)
@@ -25,9 +25,9 @@ class SimpleDataset:
     def __len__(self):
         return len(self.meta['image_names'])
 
-
 class SetDataset:
     def __init__(self, data_file, batch_size, transform):
+        
         with open(data_file, 'r') as f:
             self.meta = json.load(f)
  
@@ -54,6 +54,7 @@ class SetDataset:
 
     def __len__(self):
         return len(self.cl_list)
+
 
 class SubDataset:
     def __init__(self, sub_meta, cl, transform=transforms.ToTensor(), target_transform=identity):

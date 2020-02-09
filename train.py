@@ -15,6 +15,7 @@ from methods.baselinetrain import BaselineTrain
 from methods.protonet import ProtoNet
 
 from io_utils import model_dict, parse_args, get_resume_file  
+from datasets import miniImageNet_few_shot
 
 def train(base_loader, model, optimization, start_epoch, stop_epoch, params):    
     if optimization == 'Adam':
@@ -45,10 +46,10 @@ if __name__=='__main__':
     if params.method in ['baseline'] :
 
         if params.dataset == "miniImageNet":
+        
+            datamgr = miniImageNet_few_shot.SimpleDataManager(image_size, batch_size = 16)
+            base_loader = datamgr.get_data_loader(aug = params.train_aug )
 
-            base_file = configs.data_dir['miniImagenet'] + 'base.json' 
-            base_datamgr    = SimpleDataManager(image_size, batch_size = 16)
-            base_loader     = base_datamgr.get_data_loader( base_file , aug = params.train_aug )
         else:
            raise ValueError('Unknown dataset')
 
@@ -59,12 +60,11 @@ if __name__=='__main__':
         train_few_shot_params    = dict(n_way = params.train_n_way, n_support = params.n_shot) 
         test_few_shot_params     = dict(n_way = params.test_n_way, n_support = params.n_shot) 
 
-
         if params.dataset == "miniImageNet":
 
-            base_file = configs.data_dir['miniImagenet'] + 'base.json' 
-            base_datamgr            = SetDataManager(image_size, n_query = n_query,  **train_few_shot_params)
-            base_loader             = base_datamgr.get_data_loader( base_file , aug = params.train_aug )
+            datamgr            = miniImageNet_few_shot.SetDataManager(image_size, n_query = n_query,  **train_few_shot_params)
+            base_loader        = datamgr.get_data_loader(aug = params.train_aug)
+
         else:
            raise ValueError('Unknown dataset')
 
