@@ -109,9 +109,9 @@ h5py 2.9.0
     run source ./download_CUB.sh
 ```
 
-3. Change configuration file `./configs.py` to reflect the correct paths to each dataset. Please see the existing example paths for information on which subfolders these paths should point to.
+4. Change configuration file `./configs.py` to reflect the correct paths to each dataset. Please see the existing example paths for information on which subfolders these paths should point to.
 
-4. Train base models on miniImageNet
+5. Train base models on miniImageNet
 
     • *Standard supervised learning on miniImageNet*
 
@@ -125,7 +125,7 @@ h5py 2.9.0
         python ./train.py --dataset miniImageNet --model ResNet10  --method protonet --n_shot 5 --train_aug
     ```
 
-5. Save features for evaluation (optional, if there is no need to adapt the features during testing) 
+6. Save features for evaluation (optional, if there is no need to adapt the features during testing) 
 
     • *Save features for testing*
 
@@ -133,13 +133,13 @@ h5py 2.9.0
         python save_features.py --model ResNet10 --method baseline --dataset CropDisease --n_shot 5 --train_aug
     ```
 
-6. Test with saved features (optional, if there is no need to adapt the features during testing) 
+7. Test with saved features (optional, if there is no need to adapt the features during testing) 
 
     ```bash
         python test_with_saved_features.py --model ResNet10 --method baseline --dataset CropDisease --n_shot 5 --train_aug
     ```
 
-7. Test
+8. Test
 
     • *Finetune with frozen model backbone*: 
  
@@ -155,7 +155,7 @@ h5py 2.9.0
     
     • *Example output:* 600 Test Acc = 49.91% +- 0.44%
 
-8. Test with Multi-model selection (make sure you have trained models on all the source domains (miniImageNet, CUB, Caltech256, CIFAR100, DTD))
+9. Test with Multi-model selection (make sure you have trained models on all the source domains (miniImageNet, CUB, Caltech256, CIFAR100, DTD))
 
     • *Test Multi-model selection without fine-tuning*: 
    
@@ -169,7 +169,7 @@ h5py 2.9.0
        python model_selection.py --model ResNet10 --method baseline  --train_aug --n_shot 5 --fine_tune_all_models
      ```
 
-9. For testing your own methods, simply replace the function **finetune()** in `finetune.py` with your own method. Your method should at least have the following arguments,
+10. For testing your own methods, simply replace the function **finetune()** in `finetune.py` with your own method. Your method should at least have the following arguments,
 
     • *novel_loader: data loader for the corresponding dataset (EuroSAT, ISIC2018, Plant Disease, ChestX-Ray8)*
 
