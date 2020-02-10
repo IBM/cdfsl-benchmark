@@ -25,7 +25,10 @@ The following datasets are used for evaluation in this challenge:
 
 ### Source domain: 
 
-* miniImageNet
+* miniImageNet 
+<br/><br/>
+
+**The datasets below are used for relicating the results of the *Multi-model Selection* in the paper, for the challenge, only pre-trained model on miniImageNet is allowed**
 
 * CUB
 * CIFAR100
