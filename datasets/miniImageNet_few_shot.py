@@ -48,7 +48,7 @@ class SetDataset:
     def __init__(self, batch_size, transform):
 
         self.sub_meta = {}
-        self.cl_list = range(10)
+        self.cl_list = range(64)
 
         for cl in self.cl_list:
             self.sub_meta[cl] = []
