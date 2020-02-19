@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 import pandas as pd
 import torchvision.transforms as transforms
-import additional_transforms as add_transforms
+import datasets.additional_transforms as add_transforms
 from torch.utils.data import Dataset, DataLoader
 from abc import abstractmethod
 from torchvision.datasets import ImageFolder
