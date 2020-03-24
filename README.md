@@ -3,6 +3,7 @@
 ### Website
 #### https://www.learning-with-limited-labels.com/
 
+
 ### Paper
 
 Please cite the following paper in use of this evaluation framework: https://arxiv.org/pdf/1912.07200.pdf
@@ -90,6 +91,10 @@ The following datasets are used for evaluation in this challenge:
 
   • Shots: n = {5, 20, 50}
 
+
+## Unsupervised Track
+
+An optional second track has been included in this challenge that allows the use of a subset of unlabeled images from each dataset for study of un/self/semi-supervised learning methods. Please see the website for additional information. 
 
 ## Enviroment
 
