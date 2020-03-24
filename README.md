@@ -94,7 +94,7 @@ The following datasets are used for evaluation in this challenge:
 
 ## Unsupervised Track
 
-An optional second track has been included in this challenge that allows the use of a subset of unlabeled images from each dataset for study of un/self/semi-supervised learning methods. Please see the website for additional information. 
+An optional second track has been included in this challenge that allows the use of a subset of unlabeled images from each dataset for study of un/self/semi-supervised learning methods. For learning and evaluation within each dataset, the images listed in text files contained in the `unsupervised-track` subfolder specific to each dataset may be used for such learning methods. Please see the website for additional information. 
 
 ## Enviroment
 
