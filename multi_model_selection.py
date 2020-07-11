@@ -327,9 +327,6 @@ def test_loop(novel_loader, return_std = False, loss_type="softmax", n_query = 1
                         loss.backward()
                       
 
-                        for k, param in enumerate(pretrained_models[idx].parameters()):
-                            param.grad[torch.lt(torch.abs(param.grad), torch.abs(param.grad).median())] = 0.0
-
                         classifier_opt.step()
                         feature_opt.step()
         
