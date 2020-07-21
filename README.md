@@ -48,7 +48,7 @@ The following datasets are used for evaluation in this challenge:
 
     Home: http://challenge2018.isic-archive.com
 
-    Direct (must login): https://challenge.kitware.com/#phase/5abcbc6f56357d0139260e66
+    Direct (must login): https://challenge.isic-archive.com/data#2018
 
 * **Plant Disease**:
 
