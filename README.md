@@ -3,6 +3,8 @@
 ### Website
 #### https://www.learning-with-limited-labels.com/
 
+### LeaderBoard
+#### https://www.learning-with-limited-labels.com/challenge
 
 ### Paper
 
