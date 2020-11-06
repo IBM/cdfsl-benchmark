@@ -11,11 +11,11 @@
 Please cite the following paper in use of this evaluation framework: https://arxiv.org/pdf/1912.07200.pdf
 
 ```
-@article{guo2019new,
-  title={A New Benchmark for Evaluation of Cross-Domain Few-Shot Learning},
-  author={Guo, Yunhui and Codella, Noel CF and Karlinsky, Leonid and Smith, John R and Rosing, Tajana and Feris, Rogerio},
-  journal={arXiv preprint arXiv:1912.07200},
-  year={2019}
+@inproceedings{guo2020broader,
+  title={A broader study of cross-domain few-shot learning},
+  author={Guo, Yunhui and Codella, Noel C and Karlinsky, Leonid and Codella, James V and Smith, John R and Saenko, Kate and Rosing, Tajana and Feris, Rogerio},
+  year={2020},
+  organization={ECCV}
 }
 ```
 
