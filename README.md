@@ -56,7 +56,7 @@ The following datasets are used for evaluation in this challenge:
 
     Home: https://www.kaggle.com/saroz014/plant-disease/
 
-    Direct: command line `kaggle datasets download -d plant-disease/data`
+    Direct: command line `kaggle datasets download -d saroz014/plant-disease/data`
 
 * **ChestX-Ray8**:
 
